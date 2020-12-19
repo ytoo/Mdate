@@ -1,4 +1,4 @@
-## Mdate.js 是一款依托于iScroll.js的日期选择小型插件，可滑动选择年、月、日，只适用于移动端。支持显示yyyyMMdd  yyyyMM  yyyy格式
+## Mdate.js 是一款依托于iScroll.js的日期选择小型插件，可滑动选择年、月、日，只适用于移动端。支持显示yyyyMMdd、yyyyMM、yyyy格式
 
 
 ### 1、引入插件
@@ -38,5 +38,5 @@
     MdateObj.updateDate({beginYear:"",endYear:""});
 
 ```
-::: tips 说明
+::: tip 说明
 本插件基于如下插件改进：https://www.jq22.com/jquery-info18385
