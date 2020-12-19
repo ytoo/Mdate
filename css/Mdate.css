@@ -1,0 +1,301 @@
+/*html, body{padding: 0; margin: 0; border: 0; vertical-align: baseline; font-size: 15px; color: #333; }*/
+
+html {
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+    min-width: 6.4rem;
+    font-size: 312.5%;
+}
+body {
+    color: #333;
+    font-size: .28em;
+    line-height: 1.5;
+    font-family: arial, Microsoft Yahei;
+    background: #f2f2f2;
+    webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+body, header, footer, section, div, span, p, img, a, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, em, i, b, u, del, menu, nav, fieldset, legend, article, aside, details, figcaption, hgroup, pre, code, from, blockquote, th, td, tr, hr, table, img, figure, button, input, textarea {
+    margin: 0;
+    padding: 0;
+    webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+}
+@media screen and (min-width: 410px) {
+    html {
+        font-size: 345%;
+    }
+}
+@media screen and (min-width: 480px) {
+    html {
+        font-size: 469%;
+    }
+}
+@media screen and (min-width: 640px) {
+    html {
+        font-size: 625%;
+    }
+}
+
+@media screen and (min-width: 645px) and (-webkit-device-pixel-ratio: 3){/*兼容全屏*/
+    html {
+        font-size: 615%;
+    }
+}
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
+    html {
+        font-size: 260%;
+    }
+}
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone5 */
+    html {
+        font-size: 260%;
+    }
+}
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 Plus */
+    html {
+        font-size: 345%;
+    }
+}
+
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: "Microsoft Yahei", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    word-break: break-all;
+}
+*:focus { outline: none; }
+.fl{float: left;}
+.fr{float: right;}
+
+
+/*选择日期*/
+.getDateBg{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000001;
+    transition: opacity 0.4s;
+    -webkit-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    -o-transition:  opacity 0.4s ;
+    opacity: 0;
+}
+.getDateBox{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    background-color: #fff;
+    box-shadow: -5px 0 5px rgba(0,0,0,0.3);
+    z-index: 10000001;
+    transition: bottom 0.4s;
+    -webkit-transition: bottom 0.4s;
+    -moz-transition: bottom 0.4s;
+    -o-transition:  bottom 0.4s ;
+    bottom: -270px;
+}
+.slideIn{
+    display: block !important;
+}
+.slideIn .getDateBox{
+    animation: slideIn 0.4s;
+    -webkit-animation: slideIn 0.4s;
+    -moz-animation:slideIn 0.4s;
+    -o-animation: slideIn 0.4s ;
+    bottom: 0;
+}
+.slideOut .getDateBox{
+    animation: slideOut 0.4s;
+    -webkit-animation: slideOut 0.4s;
+    -moz-animation: slideOut 0.4s;
+    -o-animation:  slideOut 0.4s ;
+    bottom: -400px;
+}
+
+.slideIn .getDateBg{
+    opacity: 1;
+}
+.slideOut .getDateBg{
+    opacity: 0;
+}
+
+.getDateBox .choiceDateTitle{
+    height: 1rem;
+    background-color: #f2f2f2;
+    position: relative;
+}
+.getDateBox .choiceDateTitle::after {
+    content: "选择时间";
+    position: absolute;
+    left: 50%;
+	top: 50%;
+	-webkit-transform:translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform:  translate(-50%,-50%) ;
+	transform:translate(-50%,-50%);
+    color: #333;
+    font-size: 0.34rem;
+}
+.getDateBox .choiceDateTitle button{
+    height: 100%;
+    padding: 0 .3rem;
+    color: #007AFF;
+    font-size: 0.34rem;
+    background: none;
+    border: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.2)
+}
+.getDateBox .dateContent{
+    width: 100%;
+    margin: 1.0rem 0;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+}
+
+.getDateBox .dateContent:before{
+    content: "";
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -ms-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -o-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+.getDateBox .dateContent:after{
+    content: "";
+    width: 100%;
+    height: 40px;
+    background: -webkit-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -webkit-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -ms-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -moz-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+    background: -o-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+.getDateBox .dateContent .checkeDate{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 40px;
+}
+.getDateBox .dateContent .checkeDate:before,
+.getDateBox .dateContent .checkeDate:after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
+    -moz-transform: scaleY(0.5);
+    -o-transform: scaleY(0.5);
+}
+.getDateBox .dateContent .checkeDate:after{
+    top: auto;
+    bottom: 0;
+}
+.mdate-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+#yearwrapper,
+#monthwrapper,
+#daywrapper{
+    /*width: 33.3%;
+    height: 100%;
+    position: absolute;
+    top: 0;*/
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    -o-flex: 1;
+    flex: 1;
+    height: 100%;
+}
+#yearwrapper{
+    /*left: 0;*/
+}
+#daywrapper{
+    /*right: 0;*/
+}
+#monthwrapper{
+    /*left: 33.3%;*/
+}
+#yearwrapper ul{
+    margin-left: 40%;
+}
+.yt-mgr40{
+    margin-right: 40%;
+}
+#daywrapper ul{
+    margin-right: 40%;
+}
+#yearwrapper ul li,
+#monthwrapper ul li,
+#daywrapper ul li{
+    height: 40px;
+    line-height: 40px;
+    font-size: 0.34rem;
+    text-align: center;
+    list-style: none;
+}
+
+@keyframes slideIn{
+    0%{bottom: -270px;}
+    100%{bottom: 0;}
+}
+@-webkit-keyframes slideIn{
+    0%{bottom: -270px;}
+    100%{bottom: 0;}
+}
+@-moz-keyframes slideIn{
+    0%{bottom: -270px;}
+    100%{bottom: 0;}
+}
+@-o-keyframes slideIn{
+    0%{bottom: -270px;}
+    100%{bottom: 0;}
+}
+@keyframes slideOut{
+    0%{bottom: 0;}
+    100%{bottom: -270px;}
+}
+@-webkit-keyframes slideOut{
+    0%{bottom: 0;}
+    100%{bottom: -270px;}
+}
+@-moz-keyframes slideOut{
+    0%{bottom: 0;}
+    100%{bottom: -270px;}
+}
+@-o-keyframes slideOut{
+    0%{bottom: 0;}
+    100%{bottom: -270px;}
+}
