@@ -40,3 +40,4 @@
 ```
 ::: tip 说明
 本插件基于如下插件改进：https://www.jq22.com/jquery-info18385
+:::
