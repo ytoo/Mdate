@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <title>日期选择插件</title>
+    <script src="Mdate.js"></script>
+</head>
+
+<body>
+    <style type="text/css">
+    
+    body {
+        background-size: 100vw 100vh;
+        background-attachment: fixed;
+        padding: 20px;
+    }
+    
+    .demoBox {
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        margin-bottom: 15px;
+        padding: 8px 8px 20px;
+    }
+
+    .demoBox >p{
+        padding-top: 10px;
+    }
+    
+    .demoBox >ol {
+        padding-top: 15px;
+        border-top: 1px dashed rgba(255, 255, 255, 0.3);
+    }
+    
+    .demoBox >ol>li {
+        padding-top: 10px;
+        margin-left: 7%;
+    }
+    
+    .demoBox >ol>li>span {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.4);
+        display: block;
+    }
+    
+    .demo {
+        height: 35px;
+        margin: 15px 0;
+        display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
+    }
+    
+    .demo >input {
+        display: block;
+        border: 0;
+        border-radius: 3px;
+        padding: 0 8px;
+        height: 100%;
+        flex: 1;
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        font-size: 14px;
+    }
+    
+    .demo >button {
+        background-color: #00c599;
+        color: #fff;
+        border: 0;
+        height: 100%;
+        margin-left: 8px;
+        padding: 0 15px;
+        border-radius: 3px;
+        font-size: 14px;
+    }
+    </style>
+    <div class="demoBox">
+        <p>Mdate.js 是一款依托于iScroll.js的日期选择小型插件，可滑动选择年、月、日，只适用于移动端。</p>
+        <p>操作简易，只需要在页面中引入iScroll.js和Mdate.js即可。</p>
+    </div>
+    <div class="demoBox">
+        <p>案例1：默认项</p>
+        <div class="demo">
+            <input type="text" id="dateSelectorOne1" placeholder="选择年月日yyyyMMdd">
+        </div>
+        <div class="demo">
+            <input type="text" id="dateSelectorOne2" placeholder="选择年月yyyyMM">
+        </div>
+        <div class="demo">
+            <input type="text" id="dateSelectorOne3" placeholder="选择年份yyyy">
+        </div>
+    </div>
+    <div class="demoBox">
+        <p>案例2：自定义项</p>
+        <div class="demo">
+            <input type="text" id="dateSelectorTwo" placeholder="请填写">
+            <button type="button" id="dateShowBtn">选择日期</button>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+var MdateObj1 = new Mdate({ 
+    el:"dateSelectorOne1",
+    acceptId: "dateSelectorOne1", 
+    formatStyle: "yyyyMMdd",
+    beginYear: "2016",
+    beginMonth: "10",
+    beginDay: "24",
+    endYear: "",
+    endMonth: "",
+    endDay: "",
+    format: "-",
+    fCallback: function(){ 
+
+    }
+});
+var MdateObj2 = new Mdate({ 
+    el:"dateSelectorOne2",
+    acceptId: "dateSelectorOne2", 
+    formatStyle: "yyyyMM",
+    beginYear: "2016",
+    beginMonth: "10",
+    beginDay: "24",
+    endYear: "",
+    endMonth: "",
+    endDay: "",
+    format: "-",
+    fCallback: function(){ 
+
+    }
+});
+var MdateObj3 = new Mdate({ 
+    el:"dateSelectorOne3",
+    acceptId: "dateSelectorOne3", 
+    formatStyle: "yyyy",
+    beginYear: "2016",
+    beginMonth: "10",
+    beginDay: "24",
+    endYear: "",
+    endMonth: "",
+    endDay: "",
+    format: "-",
+    fCallback: function(){ 
+
+    }
+});
+var MdateObj = new Mdate({ 
+    el:"dateShowBtn",
+    acceptId: "dateSelectorTwo", 
+    formatStyle: "yyyyMMdd",
+    beginYear: "2016",
+    beginMonth: "10",
+    beginDay: "24",
+    endYear: "",
+    endMonth: "",
+    endDay: "",
+    format: "/",
+    fCallback: function(){ 
+
+    }
+});
+</script>
+
+</html>
