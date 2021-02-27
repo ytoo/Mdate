@@ -102,6 +102,10 @@
             <input type="text" id="dateSelectorTwo" placeholder="请填写">
             <button type="button" id="dateShowBtn">选择日期</button>
         </div>
+        <div class="demo">
+            <input type="text" id="dateSelectorThree" placeholder="请填写">
+            <button type="button" id="dateShowBtn4">选择日期</button>
+        </div>
     </div>
 </body>
 <script type="text/javascript">
@@ -153,6 +157,26 @@ var MdateObj3 = new Mdate({
 var MdateObj = new Mdate({ 
     el:"dateShowBtn",
     acceptId: "dateSelectorTwo", 
+    formatStyle: "yyyyMMdd",
+    beginYear: "2016",
+    beginMonth: "10",
+    beginDay: "24",
+    endYear: "",
+    endMonth: "",
+    endDay: "",
+    format: "/",
+    fCallback: function(data){ 
+        console.log(data)
+        MdateObj4.updateDate({
+            beginYear: data.substring(0,4),
+            beginMonth: data.substring(5,7),
+            beginDay: data.substring(8,10)
+        })
+    }
+});
+var MdateObj4 = new Mdate({ 
+    el:"dateShowBtn4",
+    acceptId: "dateSelectorThree", 
     formatStyle: "yyyyMMdd",
     beginYear: "2016",
     beginMonth: "10",

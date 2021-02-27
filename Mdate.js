@@ -78,6 +78,7 @@
                 that.createDateBox();
                 that.dateSure();
             };
+            // 兼容处理ios6s无法弹出本插件问题
             that.selectorId.onfocus = function(){
                 document.activeElement.blur();
             }
@@ -299,9 +300,18 @@
             }, 400)
         },
         updateDate: function (dateobj) {
+            // 更新插件起始和截止时间
             var that = this;
+            // 更新时自定义data需要重置为空，否则当实例一选择完时间更新实例二的起始时间(更新完的起始时间在之前实例二默认显示时间之后)，点击实例二会偶显找不到需要显示的元素
+            that.selectorId.setAttribute("data-year", "");
+            that.selectorId.setAttribute("data-month", "");
+            that.selectorId.setAttribute("data-day", "");
             that.beginYear = dateobj.beginYear || that.beginYear;
+            that.beginMonth = dateobj.beginMonth || that.beginMonth;
+            that.beginDay = dateobj.beginDay || that.beginDay;
             that.endYear = dateobj.endYear || that.endYear;
+            that.endMonth = dateobj.endMonth || that.endMonth;
+            that.endDay = dateobj.endDay || that.endDay;
         }
     };
     
