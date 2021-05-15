@@ -151,10 +151,10 @@
                 dataStyle = "data-day";
                 beginNum = 1;
                 endNum = new Date(yearTag, monthTag, 0).getDate();
-                if (yearTag == that.beginYear && monthTag == that.beginMonth) {
+                if (yearTag == that.beginYear && monthTag == +that.beginMonth) {
                     beginNum = that.beginDay;
                 }
-                if (yearTag == that.endYear && monthTag == that.endMonth) {
+                if (yearTag == that.endYear && monthTag == +that.endMonth) {
                     endNum = that.endDay;
                 }
             }
@@ -231,6 +231,7 @@
                 });
             }
         },
+        // 初始化日期面板，滚动到对应的年月日
         refreshScroll: function () {
             var that = this;
             var inputYear = that.selectorId.getAttribute("data-year");
@@ -241,10 +242,14 @@
             inputDay = inputDay || that.beginDay;
             initM = that.beginMonth;
             initD = that.beginDay;
-            if (inputYear != that.beginYear && initM != 1) {
+            // 非起始年份，月份从1开始
+            if (inputYear != that.beginYear) {
                 initM = 1;
             }
-            if (inputMonth != that.beginMonth && initD != 1) {
+            var inputYearMonth = inputYear + "" + inputMonth;
+            var beginYeayMonth = that.beginYear + "" + that.beginMonth;
+            // 非起始年份下月份，日从1号开始
+            if (inputYearMonth != beginYeayMonth) {
                 initD = 1;
             }
             inputYear -= that.beginYear;

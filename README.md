@@ -26,10 +26,10 @@
         beginMonth: "10",//此项为Mdate的初始月份，不填写默认为1
         beginDay: "24",//此项为Mdate的初始日期，不填写默认为1
         endYear: "2017",//此项为Mdate的结束年份，不填写默认为当年
-        endMonth: "1",//此项为Mdate的结束月份，不填写默认为当月
-        endDay: "1",//此项为Mdate的结束日期，不填写默认为当天
+        endMonth: "05",//此项为Mdate的结束月份，不填写默认为当月
+        endDay: "06",//此项为Mdate的结束日期，不填写默认为当天
         format: "-",//此项为Mdate需要显示的分隔格式，可填写"/"或"-"或".",不填写默认为"/"
-        fCallback: function(){ //此项为Mdate的回调函数，可自定义处理业务逻辑
+        fCallback: function(data){ //此项为Mdate的回调函数，可自定义处理业务逻辑
 
         }
     });
