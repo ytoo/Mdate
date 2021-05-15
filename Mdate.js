@@ -281,8 +281,8 @@
                     that.acceptId.value = dateVlue;
                 }
                 that.selectorId.setAttribute("data-year", yearTag);
-                that.selectorId.setAttribute("data-month", monthTag);
-                that.selectorId.setAttribute("data-day", dayTag);
+                that.selectorId.setAttribute("data-month", that.dateForTen(monthTag));
+                that.selectorId.setAttribute("data-day", that.dateForTen(dayTag));
                 typeof that.fCallback == "function"?that.fCallback(dateVlue):"";
                 that.dateCancel();
             };
